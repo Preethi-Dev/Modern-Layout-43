@@ -1,6 +1,6 @@
 # Modern Layouts - 43/50 (#Made-In-CSS-Grid)
 
-![Screenshot](/assets/screenshot/layout-43-screenshot.png)
+![Screenshot](./assets/screenshot/layout-43-screenshot.png)
 
 _50 days challenge on Modern Layouts using CSS Grid and FlexBox._
 
