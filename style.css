@@ -1,5 +1,207 @@
 /* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* Fonts */
+@font-face {
+  font-family: "Ultra";
+  src: url(./assets/fonts/Ultra.ttf);
+}
+
+@font-face {
+  font-family: "Montagu Slab Light";
+  src: url(./assets/fonts/MontaguSlab16pt-Light.ttf);
+}
+
+@font-face {
+  font-family: "Montagu Slab";
+  src: url(./assets/fonts/MontaguSlab16pt-Regular.ttf);
+}
+
 /* Variables */
+:root {
+  --primary: #ffffff;
+  --secondary: linear-gradient(68.66deg, #572344 0%, #b28390 100%);
+}
+
 /* Base Styles */
+body {
+  background: var(--secondary);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem;
+}
+
+header .logo h1 {
+  font-family: "Ultra";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 23px;
+}
+
+header .menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header .menu a {
+  font-family: "Montagu Slab";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 21px;
+  text-align: right;
+  letter-spacing: -0.02em;
+
+  color: var(--primary);
+}
+
+main .front-text {
+  display: flex;
+  flex-direction: column;
+}
+
+main .front-text p,
+main .back-text p {
+  font-family: "Ultra";
+  font-style: normal;
+  font-weight: 400;
+}
+
+main .front-text > p:last-child,
+main .front-text > p:nth-child(3) {
+  align-self: flex-end;
+}
+
+main .front-text > p:first-child,
+main .front-text > p:last-child,
+.author .author__info > * {
+  font-family: "Montagu Slab";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author .author__info p {
+  font-family: "Montagu Slab Light";
+  font-size: 0.75rem;
+}
+
 /* Mobile Styles */
+main {
+  padding: 1rem 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+main > * {
+  grid-column: 1 / -1;
+}
+
+main .front-text p {
+  font-size: 3rem;
+}
+
+main .back-text {
+  display: none;
+}
+
+main > .image {
+  justify-self: center;
+}
+
+/* Small Tablet Styles */
+@media screen and (min-width: 500px) {
+  main .front-text p {
+    font-size: 4rem;
+  }
+  main > * {
+    grid-row: 1;
+  }
+}
+
+/* Large Tablet Styles */
+@media screen and (min-width: 700px) {
+  main {
+    align-items: center;
+  }
+  main .front-text p {
+    font-size: 5.5rem;
+  }
+
+  main .author {
+    align-self: end;
+    padding: 2.5rem 0;
+  }
+}
+
+/* Laptop Styles */
+@media screen and (min-width: 900px) {
+  main .front-text p {
+    font-size: 7rem;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1300px) {
+  main {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  main .front-text p,
+  main .back-text p {
+    font-size: 9rem;
+  }
+
+  main .front-text p > span {
+    display: none;
+  }
+
+  main .back-text {
+    display: block;
+    place-self: center;
+    z-index: 1;
+
+    margin-left: -15rem;
+    margin-top: 11.5rem;
+  }
+}
